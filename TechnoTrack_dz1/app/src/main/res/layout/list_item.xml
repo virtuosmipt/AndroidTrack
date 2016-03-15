@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="horizontal"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <ImageView
+        android:background="@drawable/pic"
+        android:id="@+id/element_picture"
+        android:layout_width="129dp"
+        android:layout_height="129dp"/>
+
+    <TextView
+        android:id="@+id/element_text"
+        android:text="Hello!"
+        android:gravity="center_vertical"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"/>
+
+</LinearLayout>
