@@ -1,12 +1,19 @@
 package com.timeforprint.technotrack_dz1;
 
+import android.app.Activity;
+import android.content.res.Resources;
+
 import java.util.Stack;
 
 // Источник - https://mtaalamu.ru/blog/coding/2284.html
 
-public class NumericParser {
-
+public class NumericParser  {
+    static Resources res;
     //TODO FIX DECADES
+
+    public NumericParser (Resources res){
+        this.res=res;
+    }
 
     private static enum Ranges {
         UNITS, DECADES, HUNDREDS, THOUSANDS, MILLIONS, BILLIONS
@@ -15,11 +22,14 @@ public class NumericParser {
     private static Stack<ThreeChar> threeChars;
 
     private static class ThreeChar {
+
         char h, d, u;
         Ranges range;
     }
 
     public static String digits2text(Integer d) {
+
+        String ss = new String();
         String s = d.toString();
         if (d < 0 || d > 1000000) {
             return null;
@@ -75,27 +85,28 @@ public class NumericParser {
                 result.append(getUnits(thch.u, thch.range == Ranges.THOUSANDS));
                 result.append(' ');
             }
+
             switch (thch.range) {
                 case MILLIONS:
                     if (thch.d == '1' || thch.u == '0') {
-                        result.append("миллионов");
+                        result.append(res.getString(R.string.millionov));
                     } else if (thch.u > '4') {
-                        result.append("миллионов");
+                        result.append(res.getString(R.string.millionov) );
                     } else if (thch.u > '1') {
-                        result.append("миллиона");
+                        result.append(res.getString(R.string.milliona));
                     } else {
-                        result.append("миллион");
+                        result.append(res.getString(R.string.million));
                     }
                     break;
                 case THOUSANDS:
                     if (thch.d == '1' || thch.u == '0') {
-                        result.append("тысяч");
+                        result.append(res.getString(R.string.tisyach));
                     } else if (thch.u > '4') {
-                        result.append("тысяч");
+                        result.append(res.getString(R.string.tisyach));
                     } else if (thch.u > '1') {
-                        result.append("тысячи");
+                        result.append(res.getString(R.string.tisyachi));
                     } else {
-                        result.append("тысяча");
+                        result.append(res.getString(R.string.tisyacha));
                     }
                     break;
             }
@@ -109,23 +120,23 @@ public class NumericParser {
     private static String getHundreds(char dig) {
         switch (dig) {
             case '1':
-                return "сто";
+                return  res.getString(R.string.sto);
             case '2':
-                return "двести";
+                return  res.getString(R.string.dvesti);
             case '3':
-                return "триста";
+                return  res.getString(R.string.trista);
             case '4':
-                return "четыреста";
+                return  res.getString(R.string.chetiresta);
             case '5':
-                return "пятьсот";
+                return  res.getString(R.string.pyatsot);
             case '6':
-                return "шестьсот";
+                return  res.getString(R.string.shestsot);
             case '7':
-                return "семьсот";
+                return  res.getString(R.string.semsot);
             case '8':
-                return "восемьсот";
+                return  res.getString(R.string.vosemsot);
             case '9':
-                return "девятьсот";
+                return  res.getString(R.string.devyatsot);
             default:
                 return null;
         }
@@ -134,48 +145,49 @@ public class NumericParser {
     private static String getDecades(char dig) {
         switch (dig) {
             case '1':
-                return "десять";
+                return res.getString(R.string.desyat);
             case '2':
-                return "двадцать";
+                return res.getString(R.string.dvadsat);
             case '3':
-                return "тридцать";
+                return res.getString(R.string.tridsat);
             case '4':
-                return "сорок";
+                return res.getString(R.string.sorok);
             case '5':
-                return "пятьдесят";
+                return res.getString(R.string.pyatdesyat);
             case '6':
-                return "шестьдесят";
+                return res.getString(R.string.shestdesyat);
             case '7':
-                return "семьдесят";
+                return res.getString(R.string.semdesyat);
             case '8':
-                return "восемьдесят";
+                return res.getString(R.string.vosemdesyat);
             case '9':
-                return "девяносто";
+                return res.getString(R.string.devyanosto);
             default:
                 return null;
         }
+
     }
 
     private static String getUnits(char dig, boolean female) {
         switch (dig) {
             case '1':
-                return female ? "одна" : "один";
+                return female ? res.getString(R.string.odna) : res.getString(R.string.odin);
             case '2':
-                return female ? "две" : "два";
+                return female ? res.getString(R.string.dve) : res.getString(R.string.dva);
             case '3':
-                return "три";
+                return res.getString(R.string.tri);
             case '4':
-                return "четыре";
+                return res.getString(R.string.chetire);
             case '5':
-                return "пять";
+                return res.getString(R.string.pyat);
             case '6':
-                return "шесть";
+                return res.getString(R.string.shest);
             case '7':
-                return "семь";
+                return res.getString(R.string.sem);
             case '8':
-                return "восемь";
+                return res.getString(R.string.vosem);
             case '9':
-                return "девять";
+                return res.getString(R.string.devyat);
             default:
                 return null;
         }
@@ -185,33 +197,33 @@ public class NumericParser {
         String s = "";
         switch (digit) {
             case '1':
-                s = "один";
+                s = res.getString(R.string.odin);
                 break;
             case '2':
-                s = "две";
+                s = res.getString(R.string.dve);
                 break;
             case '3':
-                s = "три";
+                s = res.getString(R.string.tri);
                 break;
             case '4':
-                s = "четыр";
+                s = res.getString(R.string.chetir);
                 break;
             case '5':
-                s = "пят";
+                s = res.getString(R.string.pyatt);
                 break;
             case '6':
-                s = "шест";
+                s = res.getString(R.string.shestt);
                 break;
             case '7':
-                s = "сем";
+                s = res.getString(R.string.semm);
                 break;
             case '8':
-                s = "восем";
+                s = res.getString(R.string.vosemm);
                 break;
             case '9':
-                s = "девят";
+                s = res.getString(R.string.devyatt);
                 break;
         }
-        return s + "надцать";
+        return s + res.getString(R.string.nadsat);
     }
 }

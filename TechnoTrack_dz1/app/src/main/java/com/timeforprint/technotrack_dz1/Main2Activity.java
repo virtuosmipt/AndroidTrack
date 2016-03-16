@@ -56,6 +56,7 @@ public class Main2Activity extends AppCompatActivity {
     }
 
     static class MyAdapter extends BaseAdapter {
+        NumericParser numericParser;
 
         Context context;
 
@@ -65,7 +66,7 @@ public class Main2Activity extends AppCompatActivity {
 
         MyAdapter(Context context) {
             this.context = context;
-
+            this.numericParser = new NumericParser(context.getResources());
 
         }
 
@@ -97,7 +98,7 @@ public class Main2Activity extends AppCompatActivity {
             } else {
                 holder = (ViewHolder)convertView.getTag();
             }
-            holder.textView.setText(NumericParser.digits2text(position+1));
+            holder.textView.setText(numericParser.digits2text(position+1));
             if ((position & 1) == 1) {
                 convertView.setBackgroundColor(Color.rgb(170, 170, 170));
             } else {

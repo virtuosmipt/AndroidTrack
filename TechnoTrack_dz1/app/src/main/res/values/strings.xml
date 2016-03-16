@@ -1,3 +1,57 @@
 <resources>
     <string name="app_name">TechnoTrack_dz1</string>
+    <!-- Миллионы -->
+    <string name="millionov">миллионов</string>
+    <string name="milliona">миллиона</string>
+    <string name="million">миллион</string>
+
+    <!-- Тысячи -->
+    <string name="tisyach">тысяч</string>
+    <string name="tisyachi">тысячи</string>
+    <string name="tisyacha">тысяча</string>
+
+    <!-- Сотни -->
+    <string name="sto">сто</string>
+    <string name="dvesti">двести</string>
+    <string name="trista">триста</string>
+    <string name="chetiresta">четыреста</string>
+    <string name="pyatsot">пятьсот</string>
+    <string name="shestsot">шестьсот</string>
+    <string name="semsot">семьсот</string>
+    <string name="vosemsot">восемьсот</string>
+    <string name="devyatsot">девятьсот</string>
+
+    <!-- Десятки -->
+    <string name="desyat">десять</string>
+    <string name="dvadsat">двадцать</string>
+    <string name="tridsat">тридцать</string>
+    <string name="sorok">сорок</string>
+    <string name="pyatdesyat">пятьдесят</string>
+    <string name="shestdesyat">шестьдсят</string>
+    <string name="semdesyat">семьдесят</string>
+    <string name="vosemdesyat">восемьдесят</string>
+    <string name="devyanosto">девяносто</string>
+    <string name="nadsat">надцать</string>
+
+    <!-- Единицы -->
+    <string name="odin">один</string>
+    <string name="odna">одна</string>
+    <string name="dva">два</string>
+    <string name="dve">две</string>
+    <string name="tri">три</string>
+    <string name="chetire">четыре</string>
+    <string name="chetir">четыр</string>
+    <string name="pyat">пять</string>
+    <string name="pyatt">пят</string>
+    <string name="shest">шесть</string>
+    <string name="shestt">шест</string>
+    <string name="sem">семь</string>
+    <string name="semm">сем</string>
+    <string name="vosem">восемь</string>
+    <string name="vosemm">восем</string>
+    <string name="devyat">девять</string>
+    <string name="devyatt">девят</string>
+
+
+
 </resources>
